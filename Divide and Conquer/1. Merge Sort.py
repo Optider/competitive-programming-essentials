@@ -19,3 +19,18 @@ def merge(left, right) :
         arr.extend(right[j:])
     
     return arr
+
+def merge_sort(arr) :
+    if len(arr) <= 1 :
+        return arr
+
+    mid = len(arr)//2
+    
+    left = merge_sort(arr[: mid])
+    right = merge_sort(arr[mid:])
+
+    return merge(left, right)
+
+if __name__ == "__main__" :
+    arr = [2,1,4,3,6,8]
+    print(merge_sort(arr))
