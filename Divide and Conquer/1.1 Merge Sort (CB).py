@@ -20,13 +20,18 @@ def merge(arr, start, end) :
     elif j <= end :
         sorted_arr.extend(arr[j:end+1])
 
-    for i in range(len(sorted_arr)-1) :
-        arr[i] = sorted_arr[i]
+    # copy all sorted elements to original array
+    for i in range(len(sorted_arr)) :
+        arr[i+start] = sorted_arr[i] # start is to be added, bcoz we need to update sorted parts only !
+
+    # print(sorted_arr)
+    # print(arr)
     pass
 
 if __name__ == "__main__":
-    # arr = [5,2,1,8,6,7]
+    # arr = [8,6,7,5,2,1]
     # merge_sort(arr, 0, len(arr)-1)
+    # print(arr)
 
     arr_merge = [1,3,5,2,4,6] # 2 sorted arrays, 0 to mid and mid+1 to last_elem
     merge(arr_merge, 0, 5)
