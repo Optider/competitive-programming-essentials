@@ -28,11 +28,29 @@ def merge(arr, start, end) :
     # print(arr)
     pass
 
-if __name__ == "__main__":
-    # arr = [8,6,7,5,2,1]
-    # merge_sort(arr, 0, len(arr)-1)
-    # print(arr)
+def merge_sort(arr, start, end) :
+    # Base Case
+    if start >= end :
+        return
 
-    arr_merge = [1,3,5,2,4,6] # 2 sorted arrays, 0 to mid and mid+1 to last_elem
-    merge(arr_merge, 0, 5)
-    print('Sorted arr_merge', arr_merge)
+    # Recursive Case, 3 Steps
+    # 1. Divide
+    mid = (start + end) // 2
+
+    # Recursively divide the array (start to mid) & (mid+1 to end)
+    merge_sort(arr, start, mid)
+    merge_sort(arr, mid+1, end)
+    
+    # Merge the two parts
+    merge(arr, start, end)
+
+    pass
+
+if __name__ == "__main__":
+    arr = [8,6,7,5,2,1]
+    merge_sort(arr, 0, len(arr)-1)
+    print(arr)
+
+    # arr_merge = [1,3,5,2,4,6] # 2 sorted arrays, 0 to mid and mid+1 to last_elem
+    # merge(arr_merge, 0, 5)
+    # print('Sorted arr_merge', arr_merge)
