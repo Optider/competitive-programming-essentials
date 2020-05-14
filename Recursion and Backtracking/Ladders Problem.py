@@ -1,3 +1,5 @@
+# Calc no of ways to climb a ladder of size 'n', using skips of 1,2,...,'k'
+
 def ladder(n, k) :
     if n == 0 :
         return 1
