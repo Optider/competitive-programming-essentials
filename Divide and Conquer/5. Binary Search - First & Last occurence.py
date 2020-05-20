@@ -26,7 +26,7 @@ def first(arr, key) :
 def last(arr, key) :
     start = 0
     end = len(arr) - 1
-    ans = None
+    ans = None # Assumed not present
 
     while start <= end :
         mid = (start + end) // 2
