@@ -19,7 +19,7 @@ def modified_binary_search2(arr, key) :
             return mid
         
         # follow right half if (right is sorted and target is in its range) OR (left is sorted but target not in its range)
-        elif arr[mid] < key <= arr[end] or (arr[start] < arr[mid] and not arr[start] <= key < arr[mid]) :
+        elif arr[mid] < key <= arr[end] or (arr[start] <= arr[mid] and not arr[start] <= key < arr[mid]) :
             
             start = mid + 1
         else :
