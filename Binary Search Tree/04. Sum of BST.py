@@ -38,14 +38,3 @@ class BST :
 		self.preorder(root.left)
 		print(root.val)
 		self.preorder(root.right)
-
-if __name__ == '__main__':
-	bst = BST()
-	# T = int(input())
-	while True :
-		# T -= 1
-		val = int(input())
-		if val == -1 :
-			break
-		bst.insert(val)
-	bst.preorder(bst.root)
