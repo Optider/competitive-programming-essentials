@@ -27,4 +27,14 @@ def naive_search(txt, pat):
         
         pass
 
-naive_search("AABAACAADAABAABA", "AABA")
+if __name__ == "__main__":
+
+    txt = "THIS IS A TEST TEXT"
+    pat = "TEST"
+    naive_search(txt, pat)
+    print()
+
+
+    txt =  "AABAACAADAABAABA"
+    pat =  "AABA"
+    naive_search(txt, pat)
