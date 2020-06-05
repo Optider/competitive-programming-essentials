@@ -63,7 +63,6 @@ def using_builtin(word) :
     for i in perm_list :
         print(''.join(i))
 
-
-permute_all(list("abc"), 0)
-
-using_builtin('abc')
+if __name__ == "__main__":
+    permute_all(list("abc"), 0)
+    using_builtin('abc')
