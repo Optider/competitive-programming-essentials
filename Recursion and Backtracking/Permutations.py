@@ -42,7 +42,7 @@ def permute_all(word, i) :
     # Recursive Case
 
     for j in range(i, len(word)) :
-        # swap : transfer word[i] to fixed region
+        # swap : transfer word[j] to fixed region
         word[i], word[j] = word[j], word[i]
         permute_all(word, i+1)
 
