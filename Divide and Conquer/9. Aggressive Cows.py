@@ -15,14 +15,14 @@
 # sys.stdin = open('./input.txt', 'r') 
 # sys.stdout = open('output.txt', 'w')
 
-def can_place(C, stalls, left, right, mid) :
-    cur = stalls[0]
+def can_place(C, stalls, min_sep) :
+    prev_cow_stall = stalls[0] # prev stall at which cow was placed
 
     for i in stalls[1:] :
         
-        if i-cur >= mid :
+        if i-prev_cow_stall >= min_sep :
             C -= 1
-            cur = i
+            prev_cow_stall = i
 
         if C == 1 : # bcoz 1st cow is already at 1st stall
             return True
@@ -38,7 +38,7 @@ def aggcow(C, stalls, left, right) :
     while left <= right :
         mid = (left + right)//2
         # print(C, left, right, mid)
-        if can_place(C, stalls, left, right, mid) :
+        if can_place(C, stalls, mid) :
             ans = mid
             left = mid + 1
             # print(ans)
