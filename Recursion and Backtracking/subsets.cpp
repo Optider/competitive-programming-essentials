@@ -13,9 +13,9 @@ void subset_better(string word, string ans="", int index=0) {
     }
 
     // recursive case
-    // include current letter
-    subset_better(word, ans, index+1);
     // exclude current letter
+    subset_better(word, ans, index+1);
+    // include current letter
     subset_better(word, ans+word[index], index+1);
 }
 
