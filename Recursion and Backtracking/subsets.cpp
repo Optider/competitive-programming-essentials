@@ -13,9 +13,10 @@ void subset_better(string word, string ans="", int index=0) {
     }
 
     // recursive case
+    // include current letter
     subset_better(word, ans, index+1);
+    // exclude current letter
     subset_better(word, ans+word[index], index+1);
-    
 }
 
 void subsets_mine_way(string word, int cur_char_pos, vector<string> &ans) {
