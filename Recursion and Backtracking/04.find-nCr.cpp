@@ -13,14 +13,8 @@ using namespace std;
 //Complete this function
 int nCr(int n, int r) {
     //Your code here
-    if (n == r) {
+    if (n == r || r == 0) {
         return 1;
-    }
-    if (n < r) {
-        return 0;
-    }
-    if (r <= 1) {
-        return n;
     }
     return nCr(n - 1, r - 1) + nCr(n - 1, r);
 }
@@ -33,6 +27,7 @@ int main() {
     while (t--) {
         int n, r;
         cin >> n >> r;
+
         cout << nCr(n, r) << endl;
     }
     return 0;
