@@ -15,7 +15,6 @@ int nCr(int n, int r) {
     //Your code here
     if (n == r) {
         return 1;
-    } else {
     }
     if (n < r) {
         return 0;
