@@ -3,6 +3,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int count_distinct_better(int *nums, int n) {
+    unordered_set<int> distinct_nums(nums, nums + n);  // initialization using constructor
+    return distinct_nums.size();
+}
+
 int count_distinct(int *nums, int n) {
     unordered_set<int> distinct_nums{};
     for (int i{}; i < n; i++) {
@@ -18,7 +23,7 @@ int main() {
     int arr[]{10, 11, 12};
 
     int n = sizeof(arr) / sizeof(arr[0]);
-    cout << count_distinct(arr, n);
-    cout << endl;
+    cout << count_distinct(arr, n) << endl;
+    cout << count_distinct_better(arr, n) << endl;
     return 0;
 }
