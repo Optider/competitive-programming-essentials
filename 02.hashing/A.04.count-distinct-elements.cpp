@@ -3,11 +3,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// T: Theta(N)
+// S: O(N)
 int count_distinct_better(int *nums, int n) {
     unordered_set<int> distinct_nums(nums, nums + n);  // initialization using constructor
     return distinct_nums.size();
 }
 
+// T: Theta(N)
+// S: O(N)
 int count_distinct(int *nums, int n) {
     unordered_set<int> distinct_nums{};
     for (int i{}; i < n; i++) {
