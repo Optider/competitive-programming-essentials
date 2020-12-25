@@ -1,27 +1,44 @@
 // Problem: https://practice.geeksforgeeks.org/problems/non-repeating-character-1587115620/0/
-
-// C++ program to implement
-// the above approach
-
+// { Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to traverse the string and
-// print the characters of the string
-void TraverseString(string &str, int N) {
-    // Traverse the string
-    for (int i = 0; i < N; i++) {
-        // Print current character
-        cout << str[i] << " ";
-    }
-}
+char nonrepeatingCharacter(string S);
 
-// Driver Code
 int main() {
-    string str = "GeeksforGeeks";
+    int T;
+    cin >> T;
 
-    // Stores length of the string
-    int N = str.length();
+    while (T--) {
+        string S;
+        cin >> S;
 
-    TraverseString(str, N);
+        char ans = nonrepeatingCharacter(S);
+
+        if (ans != '$')
+            cout << ans;
+        else
+            cout << "-1";
+
+        cout << endl;
+    }
+
+    return 0;
+}
+// } Driver Code Ends
+
+// Complete this function
+char nonrepeatingCharacter(string S) {
+    //Your code here
+    unordered_map<int, int> freq{};
+    for (auto c : S) {
+        freq[c]++;
+    }
+
+    for (auto c : S) {
+        if (freq[c] == 1) {
+            return c;
+        }
+    }
+    return '$';
 }
