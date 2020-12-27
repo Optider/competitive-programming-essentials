@@ -1,9 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define alpha_len 256
+
 // T: Theta(N + CHAR)
 // S: O(CHAR)
 bool is_anagram_better(string word1, string word2) {
+    if (word1.length() != word2.length()) {
+        return false;
+    }
+
+    int alphabets[alpha_len]{};
+    for (int i{}; i < word1.length(); i++) {
+        alphabets[word1[i]]++;
+        alphabets[word2[i]]--;
+    }
+
+    for (auto num : alphabets) {
+        if (num != 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
 // T: Theta(N)
@@ -40,10 +58,16 @@ int main() {
     string word1{"listen"};
     string word2{"silent"};
 
-    if (is_anagram(word1, word2)) {
-        cout << "Anagram";
+    if (is_anagram_better(word1, word2)) {
+        cout << "Anagram" << endl;
     } else {
-        cout << "Not Anagram";
+        cout << "Not Anagram" << endl;
+    }
+
+    if (is_anagram(word1, word2)) {
+        cout << "Anagram" << endl;
+    } else {
+        cout << "Not Anagram" << endl;
     }
     cout << endl;
     return 0;
