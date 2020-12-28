@@ -1,11 +1,13 @@
-// i/p: geeksforgeeks
-// o/p: 0
+/*  Test Cases:
+    i/p: geeksforgeeks
+    o/p: 0
 
-// i/p: abbcc
-// o/p: 1
+    i/p: abbcc
+    o/p: 1
 
-// i/p: abcd
-// o/p: -1
+    i/p: abcd
+    o/p: -1 
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
