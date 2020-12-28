@@ -16,7 +16,7 @@ const int LEN{256};  // ascii char are 256
 // T: Theta(N+LEN) 1 loop
 // S: Theta(LEN) constant space
 // space is saved as bool[] is used as compared to int[] in better_1
-int leftmost_rep_better_2(string word) {
+int leftmost_rep_better_2(const string &word) {
     bool visited[LEN];
     fill(visited, visited + LEN, false);
 
@@ -40,7 +40,7 @@ int leftmost_rep_better_2(string word) {
 
 // T: Theta(N+LEN) 1 loop
 // S: Theta(LEN) constant space
-int leftmost_rep_better_1(string word) {
+int leftmost_rep_better_1(const string &word) {
     int first_idx[LEN]{};  // -1 => unvisited, any-num-else => 1st index of visited char
 
     fill(first_idx, first_idx + LEN, -1);
@@ -64,7 +64,7 @@ int leftmost_rep_better_1(string word) {
 
 // T: Theta(N+LEN) 2 loops
 // S: Theta(LEN) constant space
-int leftmost_rep(string word) {
+int leftmost_rep(const string &word) {
     int freq[LEN]{};
     for (char c : word) {
         freq[c]++;
