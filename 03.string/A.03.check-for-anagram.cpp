@@ -3,7 +3,7 @@ using namespace std;
 
 #define alpha_len 256
 
-// T: Theta(N + CHAR)
+// T: O(N + CHAR)
 // S: O(CHAR)
 bool is_anagram_better(string word1, string word2) {
     if (word1.length() != word2.length()) {
@@ -24,7 +24,7 @@ bool is_anagram_better(string word1, string word2) {
     return true;
 }
 
-// T: Theta(N)
+// T: O(N)
 // S: O(N)
 bool is_anagram(string word1, string word2) {
     unordered_map<char, int> freq_1;
