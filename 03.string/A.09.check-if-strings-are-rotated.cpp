@@ -27,7 +27,7 @@ void check_rotated_better(const string &s1, const string &s2) {
 
     string s1_twice = s1 + s1;
 
-    if (s1_twice.find(s2) == npos)  // STL find() takes O(n)
+    if (s1_twice.find(s2) == string::npos)  // STL find() takes O(n)
         cout << "No" << endl;
     else
         cout << "Yes" << endl;
@@ -36,8 +36,10 @@ void check_rotated_better(const string &s1, const string &s2) {
 // T: O((n-m+1)*m) quadratic
 // S: Theta(n)
 void check_rotated(const string &s1, const string &s2) {
-    if (s1.length() != s2.length())
-        return false;
+    if (s1.length() != s2.length()) {
+        cout << "No" << endl;
+        return;
+    }
 
     string s1_twice = s1 + s1;
 
