@@ -1,5 +1,5 @@
 /*  
-    Problem: Given a ..., we need to print ...
+    Problem: Given a string s consisting of multiple words. You need to count the total words in the string. Words are separated by a single space.
 
     Test Cases:
 
