@@ -16,11 +16,11 @@ using namespace std;
 
 // T: O(Log N)
 // S: O(1)
-int squareRootBetter(int key) {
+int sqRootFloorBetter(int key) {
     int left = 1, right = key;
     int mid = {};
     int potentialSquare = {};
-    int ans = {};
+    int ans = {-1};
 
     while (left <= right) {
         mid = left + (right - left) / 2;
@@ -40,20 +40,21 @@ int squareRootBetter(int key) {
 
 // T: O(N)
 // S: O(1)
-int squareRoot(int key) {
-    for (int i = 1; i < key; i++) {
-        if (i * i == key)
-            return i;
-        else if (i * i > key)
-            return i - 1;
+int sqRootFloor(int key) {
+    int i = 1;
+
+    while (i * i <= key) {
+        i++;
     }
+
+    return i - 1;
 }
 
 int main() {
     int n = {};
     cin >> n;
 
-    cout << squareRootBetter(n) << endl;
-    cout << squareRoot(n) << endl;
+    cout << sqRootFloorBetter(n) << endl;
+    cout << sqRootFloor(n) << endl;
     return 0;
 }
