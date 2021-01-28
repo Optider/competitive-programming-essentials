@@ -24,10 +24,10 @@ int binarySearchRec(int nums[], int key, int left, int right) {
         return -1;
 
     // recursive case
-    int mid = (left + right) / 2;
+    // int mid = (left + right) / 2;
+    int mid = left + (right - left) / 2;  // this won't cause overflow
 
-    if (key == nums[mid])
-        return mid;
+    if (key == nums[mid]) return mid;
     if (key < nums[mid]) {
         right = mid - 1;
         return binarySearchRec(nums, key, left, right);

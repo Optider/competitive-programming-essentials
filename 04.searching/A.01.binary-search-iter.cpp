@@ -24,7 +24,8 @@ int binarySearchIter(int nums[], int n, int key) {
     int mid = 0;
 
     while (left <= right) {
-        mid = (left + right) / 2;
+        // mid = (left + right) / 2;
+        mid = left + (right - left) / 2;  // this wont cause overflow
 
         if (key == nums[mid])
             return mid;
