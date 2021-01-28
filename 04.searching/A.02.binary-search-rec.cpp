@@ -16,24 +16,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// T:
-// S:
-int binarySearchRec(int nums[], int n, int key, int left, int right) {
-    int mid = (left + right) / 2;
-
+// T: O(Log N)
+// S: O(Log N), due to call stack
+int binarySearchRec(int nums[], int key, int left, int right) {
     // base case
     if (left > right)
         return -1;
 
     // recursive case
+    int mid = (left + right) / 2;
+
     if (key == nums[mid])
         return mid;
     if (key < nums[mid]) {
         right = mid - 1;
-        return binarySearchRec(nums, n, key, left, right);
+        return binarySearchRec(nums, key, left, right);
     } else {
         left = mid + 1;
-        return binarySearchRec(nums, n, key, left, right);
+        return binarySearchRec(nums, key, left, right);
     }
 }
 
@@ -47,5 +47,5 @@ int main() {
         cin >> nums[i];
     }
 
-    cout << binarySearchRec(nums, n, key, 0, n - 1) << endl;
+    cout << binarySearchRec(nums, key, 0, n - 1) << endl;
 }
