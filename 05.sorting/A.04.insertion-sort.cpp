@@ -5,8 +5,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// T:
-// S:
+// T: Theta(n^2)
+// S: O(1)
 void insertionSort(vector<int> &arr, int n) {
     int sortedIdx = {};
     int cur = {};
