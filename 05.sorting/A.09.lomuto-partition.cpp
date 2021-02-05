@@ -1,5 +1,6 @@
 /*  
     Lomuto Partition is another method of partitioning. In this method, the traversal is done only once with a constant space complexity.
+    Lomuto Partition is NOT stable. While Naive Partition is Stable.
 
     Dry run and Logic at end of file.
 */
@@ -38,7 +39,7 @@ int main() {
 -------------------
 
 NOTE:
-    Modified version: if you want to consider any input as pivot => swap it with last elem and follow the same approach
+    For Modified version: if you want to consider any other elem as pivot => swap it with last arr elem and follow this algo
 
 Idea:
     Partition elem is always considered to be last elem
