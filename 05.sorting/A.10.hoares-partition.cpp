@@ -5,8 +5,8 @@
         In this algo, pivot is NOT placed at correct place. Just elems on both half of returned index, are lesser and greater resp to the pivot.
         Pivot might be present in any half of the array.
 
-        Hoare and Lomuto are NOT stable sort.
-        While Naive partition is Stable sort.
+        Hoare and Lomuto are NOT stable.
+        While Naive partition is Stable.
         Overall, Hoare is better than Lomuto in terms of comparisons done.
 */
 
