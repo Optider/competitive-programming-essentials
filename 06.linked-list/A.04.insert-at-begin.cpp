@@ -20,9 +20,6 @@ struct Node {
 Node *insertBegin(Node *head, int key) {
     Node *newNode = new Node(key);
 
-    if (head == nullptr)
-        return newNode;
-
     newNode->next = head;
     return newNode;
 }
