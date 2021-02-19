@@ -34,11 +34,12 @@ void printList(Node *head) {
 }
 
 int main() {
-    Node *head = new Node(10);
-    head->next = new Node(20);
-    head->next->next = new Node(40);
+    Node *head = nullptr;
 
     head = insertBegin(head, 4);
+    head = insertBegin(head, 8);
+    head = insertBegin(head, 12);
+    head = insertBegin(head, 16);
 
     printList(head);
     cout << endl;
