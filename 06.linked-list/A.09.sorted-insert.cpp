@@ -42,8 +42,8 @@ struct Node {
     }
 };
 
-// T: O()
-// S: O()
+// T: O(n)
+// S: O(1)
 Node *sortedInsert(Node *head, int key) {
     Node *newNode = new Node(key);
 
