@@ -5,24 +5,31 @@
 
         i/p:
             10 30 40 50
+            pos = 1
+            data = 6
+        o/p:
+            6 10 30 40 50
+
+        i/p:
+            6 10 30 40 50
             pos = 2
             data = 20
         o/p:
-            10 20 30 40 50
+            6 20 10 30 40 50
 
         i/p:
-            10 20 30 40 50
-            pos = 6
+            6 20 10 30 40 50
+            pos = 7
             data = 60
         o/p:
-            10 20 30 40 50 60
+            6 20 10 30 40 50 60
 
         i/p:
-            10 20 30 40 50 60
-            pos = 8
-            data = 80
+            6 20 10 30 40 60 50
+            pos = 10
+            data = 100
         o/p:
-            10 20 30 40 50 60
+            6 20 10 30 40 60 50
 
 */
 
@@ -81,14 +88,16 @@ int main() {
     head->next->next = new Node(40);
     head->next->next->next = new Node(50);
 
-    insertAtPos(head, 2, 20);
-
+    head = insertAtPos(head, 1, 6);
     printList(head);
 
-    insertAtPos(head, 6, 60);
+    head = insertAtPos(head, 2, 20);
     printList(head);
 
-    insertAtPos(head, 8, 80);
+    head = insertAtPos(head, 7, 60);
+    printList(head);
+
+    head = insertAtPos(head, 10, 20);
     printList(head);
 
     cout << endl;
