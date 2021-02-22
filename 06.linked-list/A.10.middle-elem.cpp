@@ -33,9 +33,9 @@ struct Node {
     }
 };
 
-// T: O(n)
+// T: O(n) 1 traversal
 // S: O(1)
-Node *midElem(Node *head) {
+Node *midElemBetter(Node *head) {
     Node *slow = head;
     Node *fast = head;
 
@@ -45,6 +45,25 @@ Node *midElem(Node *head) {
     }
 
     return slow;
+}
+
+// T: O(n) 2 traversals
+// S: O(1)
+Node *midElemNaive(Node *head) {
+    if (head == nullptr)
+        return head;
+
+    Node *cur = head;
+    int count = {};
+    for (cur = head; cur != nullptr; cur = cur->next) {
+        count++;
+    }
+
+    cur = head;
+    for (int jumps = 0; jumps < count / 2; jumps++) {
+        cur = cur->next;
+    }
+    return cur;
 }
 
 void printNode(Node *midNode) {
@@ -58,19 +77,28 @@ int main() {
     Node *head = nullptr;
     Node *midNode = nullptr;
 
-    midNode = midElem(head);
+    midNode = midElemBetter(head);
+    printNode(midNode);
+
+    midNode = midElemNaive(head);
     printNode(midNode);
 
     head = new Node(4);
     head->next = new Node(8);
     head->next->next = new Node(12);
 
-    midNode = midElem(head);
+    midNode = midElemBetter(head);
+    printNode(midNode);
+
+    midNode = midElemNaive(head);
     printNode(midNode);
 
     head->next->next->next = new Node(16);
 
-    midNode = midElem(head);
+    midNode = midElemBetter(head);
+    printNode(midNode);
+
+    midNode = midElemNaive(head);
     printNode(midNode);
 
     cout << endl;
